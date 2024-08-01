@@ -8,4 +8,10 @@ def twoSumSimple(nums, target):
             else:
                 continue
 
+
 def twoSum(nums, target):
+    numMap = dict()
+    for index, num in enumerate(nums):
+        if target - num in numMap:
+            return [numMap[target - num], index]
+        numMap[nums[index]] = index
